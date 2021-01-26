@@ -11,11 +11,22 @@ Exercise.destroy_all
 # User.destroy_all
 Workout.destroy_all
 WorkoutExercise.destroy_all
+Weight.destroy_all
 
 
 User.create({name: "Adam", age: 20, bio: "Student of the gym", height: "6'", weight: 200})
 
 u1 = User.first 
+
+weight1 = Weight.create({date: '2020-12-12', weight: 196, user: u1})
+weight2 = Weight.create({date: '2020-12-13', weight: 196, user: u1})
+weight3 = Weight.create({date: '2020-12-14', weight: 197, user: u1})
+weight4 = Weight.create({date: '2020-12-16', weight: 198, user: u1})
+weight5 = Weight.create({date: '2020-12-17', weight: 195, user: u1})
+weight6 = Weight.create({date: '2020-12-18', weight: 196, user: u1})
+weight7 = Weight.create({date: '2020-12-27', weight: 203, user: u1})
+weight8 = Weight.create({date: '2020-12-29', weight: 200, user: u1})
+weight9 = Weight.create({date: '2021-01-02', weight: 201, user: u1})
 
 
 Workout.create({date: '2020-12-12', notes: "chest workout was great", name: "Chest Day", user: u1})
@@ -45,7 +56,7 @@ csv.each do |row|
 
 e1 = Exercise.first 
 e2 = Exercise.second
-e2 = Exercise.third
+e3 = Exercise.third
 
 
 WorkoutExercise.create({workout: w1, exercise: e1})
