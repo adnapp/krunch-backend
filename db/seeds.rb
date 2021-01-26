@@ -51,3 +51,5 @@ e2 = Exercise.third
 WorkoutExercise.create({workout: w1, exercise: e1})
 WorkoutExercise.create({workout: w1, exercise: e2})
 WorkoutExercise.create({workout: w1, exercise: e3})
+
+puts "Seeds planted 🌱"
