@@ -18,8 +18,8 @@ User.create({name: "Adam", age: 20, bio: "Student of the gym", height: "6'", wei
 u1 = User.first 
 
 
-Workout.create({date: '2020-12-12', notes: "chest workout was great", name: "chest day", user: u1})
-Workout.create({date: '2020-12-13', notes: "leg workout was great", name: "leg day", user: u1})
+Workout.create({date: '2020-12-12', notes: "chest workout was great", name: "Chest Day", user: u1})
+Workout.create({date: '2020-12-13', notes: "leg workout was great", name: "Leg Day", user: u1})
 
 w1 = Workout.first 
 w2 = Workout.second
@@ -45,6 +45,9 @@ csv.each do |row|
 
 e1 = Exercise.first 
 e2 = Exercise.second
+e2 = Exercise.third
+
 
 WorkoutExercise.create({workout: w1, exercise: e1})
 WorkoutExercise.create({workout: w1, exercise: e2})
+WorkoutExercise.create({workout: w1, exercise: e3})

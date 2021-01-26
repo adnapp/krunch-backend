@@ -11,7 +11,7 @@ class WorkoutExercisesController < ApplicationController
     end
 
     def create
-        workoutExercise = WorkoutExercise.create(workoutExercise_params)
+        workoutExercise = WorkoutExercise.create(workout_exercise_params)
         render json: workoutExercise
     end
 
@@ -22,7 +22,7 @@ class WorkoutExercisesController < ApplicationController
 
     private
 
-    def workoutExercise_params
-        params.require(:workoutExercise).permit(:workout_id, :exercise_id)
+    def workout_exercise_params
+        params.permit(:workout_id, :exercise_id)
     end
 end
