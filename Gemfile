@@ -43,3 +43,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'active_model_serializers'
 
 gem 'figaro'
+
+
+#rest-client to communicate with API
+gem 'rest-client'
+
+#dotenv to hide api keys
+gem 'dotenv-rails', groups: [:development, :test]
