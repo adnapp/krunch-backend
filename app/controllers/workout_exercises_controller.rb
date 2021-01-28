@@ -17,12 +17,13 @@ class WorkoutExercisesController < ApplicationController
 
     def destroy
         workoutExercise = WorkoutExercise.find(params[:id])
+        workoutExercise.destroy
         render json: workoutExercise
     end
 
     private
 
     def workout_exercise_params
-        params.permit(:workout_id, :exercise_id)
+        params.permit(:workout_id, :exercise_id, :reps)
     end
 end
