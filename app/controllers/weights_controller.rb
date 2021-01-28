@@ -10,9 +10,8 @@ class WeightsController < ApplicationController
         render json: weight
     end
 
-    def update
-        weight = Weight.find(params[:id])
-        weight.update(weight_params)
+    def create
+        weight = Weight.create(weight_params)
         render json: weight
     end
 
