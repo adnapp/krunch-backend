@@ -5,7 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require './exercises.csv'
+require 'csv'
+require 'open-uri'
+
+csv_text = open('http://www.vvv.hh.yyy.ggg/~hhhh/uuuu.csv')
+csv = CSV.parse(csv_text, :headers=>true)
+csv.each do |row|
+  puts row
+end
+
 
 Exercise.destroy_all
 # User.destroy_all
