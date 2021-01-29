@@ -8,7 +8,7 @@
 require 'csv'
 require 'open-uri'
 
-csv_text = open('http://www.vvv.hh.yyy.ggg/~hhhh/uuuu.csv')
+csv_text = open('https://github.com/adnapp/krunch-backend/blob/main/lib/seeds/exercises.csv')
 csv = CSV.parse(csv_text, :headers=>true)
 csv.each do |row|
   puts row
