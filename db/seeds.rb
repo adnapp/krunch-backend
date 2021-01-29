@@ -41,7 +41,7 @@ w1 = Workout.first
 w2 = Workout.second
 
 
-csv_text = File.read("/app/lib/Seeds/exercises.csv")
+csv_text = File.read("/app/lib/seeds/exercises.csv")
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
     # puts row.to_hash
