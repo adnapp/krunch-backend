@@ -8,11 +8,7 @@
 require 'csv'
 require 'open-uri'
 
-csv_text = open('https://raw.githubusercontent.com/adnapp/krunch-backend/main/lib/seeds/exercises.csv')
-csv = CSV.parse(csv_text, :headers=>true)
-csv.each do |row|
-  puts row
-end
+
 
 
 Exercise.destroy_all
@@ -44,23 +40,28 @@ w1 = Workout.first
 w2 = Workout.second
 
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'exercises.csv'))
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-csv.each do |row|
-    # puts row.to_hash
+# csv_text = File.read(Rails.root.join('lib', 'seeds', 'exercises.csv'))
+# csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+# csv.each do |row|
+#     # puts row.to_hash
 
-    e = Exercise.new 
-    e.exercise = row['Exercise']
-    e.equipment = row['Equipment']
-    e.exerciseType = row['Exercise Type']
-    e.majorMuscle = row['Major Muscle']
-    e.minorMuscle = row['Minor Muscle']
-    e.example = row['Example'].split(' ')[1..-1].join(' ')[1..-1][0...-1]
-    e.notes = row['Notes']
-    e.modifications = row['Modifications']
-    e.save
+#     e = Exercise.new 
+#     e.exercise = row['Exercise']
+#     e.equipment = row['Equipment']
+#     e.exerciseType = row['Exercise Type']
+#     e.majorMuscle = row['Major Muscle']
+#     e.minorMuscle = row['Minor Muscle']
+#     e.example = row['Example'].split(' ')[1..-1].join(' ')[1..-1][0...-1]
+#     e.notes = row['Notes']
+#     e.modifications = row['Modifications']
+#     e.save
+#   end
+
+  csv_text = open('https://raw.githubusercontent.com/adnapp/krunch-backend/main/lib/seeds/exercises.csv')
+  csv = CSV.parse(csv_text, :headers=>true)
+  csv.each do |row|
+    puts row
   end
-
 
 e1 = Exercise.first 
 e2 = Exercise.second
